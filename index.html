@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVITE</title>
+</head>
+
+<body>
+    <div id="conteudo">
+        <h1 style="font-size: xx-large;text-shadow: 0.05em 0.05em #f5f4f4;font-family: 'Kanit', sans-serif;">
+            Proposta irrecusável.
+            você não consegue clicar no "não" 😂
+        </h1>
+
+        <h2 style="text-shadow: 0.05em 0.05em #f5f4f4;font-family: 'Kanit', sans-serif;">
+            Pare de insistir, você não vai conseguir 🤭 😂
+        </h2>
+
+        <h3
+            style="font-size: x-large;color: rgb(0, 0, 0);text-shadow: 0.05em 0.05em #f5f4f4;font-family: 'Kanit', sans-serif;">
+            aceita sair comigo?
+        </h3>
+        <button class="btn" onclick="sim()">
+            SIM
+        </button>
+        <button onmouseover="desvia(this)">NÃO</button>
+    </div>
+</body>
+
+<style>
+    #conteudo {
+        background-image: url(https://cdn.pixabay.com/photo/2022/03/22/01/13/romantic-card-7084154_1280.png);
+
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Rubik:500');
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font-family: 'Rubik', sans-serif;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #CCD1D9;
+    }
+
+    .btn {
+        padding: 16px 42px;
+        border-radius: 3px;
+        box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+        line-height: 1.25;
+        background: #fffefe;
+        text-decoration: none;
+        color: rgb(9, 8, 8);
+        font-size: 16px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        position: relative;
+        transition: background-color .6s ease;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            top: var(--mouse-y);
+            left: var(--mouse-x);
+            transform-style: flat;
+            transform: translate3d(-50%, -50%, 0);
+            background: rgba(white, .1);
+            border-radius: 100%;
+            transition: width .3s ease, height .3s ease;
+        }
+
+        &:focus,
+        &:hover {
+            background: darken(#FC6E51, 7%);
+        }
+
+        &:active {
+            &:after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+</style>
+<script>
+    function sim() {
+        alert("você aceitou sair comigo!  😀 😍. me informe no whatsapp coisas que você gosta de fazer e lugares que gosta de ir.")
+    }
+    function desvia(t) {
+        var btn = t;
+        btn.style.position = "absolute";
+        btn.style.botton = geraPosicao(12, 120);
+        btn.style.right = geraPosicao(12, 120);
+        console.log("opa, desviei...");
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + "%"
+    }
+</script>
+
+</html>
